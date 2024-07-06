@@ -68,3 +68,78 @@ Uses Tesseract OCR to recognize numbers in a given image. It processes the image
 
 - The project leverages various Python libraries to achieve screen automation and image recognition.
 - OpenCV and Tesseract OCR are instrumental in the image processing and recognition tasks.
+
+-----------------------------------------------------------------------------------------
+
+
+# Progetto di Interazione Automatica con lo Schermo
+
+## Introduzione
+
+Questo progetto si concentra sull'automazione delle interazioni con gli elementi dello schermo utilizzando vari script Python. I compiti principali includono catturare screenshot, riconoscere e cliccare su icone specifiche, ed eseguire azioni ripetitive basate su elementi riconosciuti sullo schermo.
+
+## File e le Loro Funzioni
+
+### `main.py`
+Questo script ottiene la posizione attuale del mouse e la stampa. È utile per identificare le coordinate per le interazioni sullo schermo.
+
+### `posizione.py`
+Uno script che stampa continuamente la posizione attuale del mouse, permettendo all'utente di identificare aree specifiche sullo schermo muovendo il mouse.
+
+### `screenshot.py`
+Cattura uno screenshot di una regione specificata sullo schermo e lo salva con un nome incrementale. Aiuta a catturare e salvare dati visivi dallo schermo.
+
+### `acquista.py`
+Contiene una funzione per trovare e cliccare su un'icona specificata all'interno di una regione sullo schermo. Utilizza OpenCV per il riconoscimento delle immagini e PyAutoGUI per interagire con lo schermo.
+
+### `RifornisciVendi.py`
+Simile a `acquista.py`, questo script trova un'icona sullo schermo e la clicca, indicando la capacità di gestire sia azioni di acquisto che di vendita.
+
+### `script.py`
+Automatizza una sequenza di interazioni, come spostare il mouse a coordinate specifiche e cliccare. È progettato per compiti ripetitivi che coinvolgono più oggetti e ritardi temporali.
+
+### `Riconoscimento.py`
+Combina le funzionalità di `acquista.py` e `RifornisciVendi.py` per riconoscere le icone ed eseguire azioni di clic. Funziona in un ciclo, controllando la presenza di icone specifiche e agendo di conseguenza.
+
+### `NumberRecognition.py`
+Utilizza Tesseract OCR per riconoscere i numeri in un'immagine data. Elabora l'immagine, estrae il testo e filtra i valori numerici.
+
+## Librerie Utilizzate
+
+- **pyautogui**: Per automatizzare le azioni del mouse e della tastiera.
+- **cv2 (OpenCV)**: Per l'elaborazione delle immagini e il template matching.
+- **numpy**: Per le operazioni numeriche.
+- **time**: Per introdurre ritardi.
+- **os**: Per le operazioni sui file.
+- **PIL (Python Imaging Library)**: Per gestire i file di immagini.
+- **pytesseract**: Per il riconoscimento ottico dei caratteri (OCR).
+
+## Come Usare
+
+1. **Configurazione**:
+   - Installa le librerie necessarie usando `pip install pyautogui opencv-python numpy pillow pytesseract`.
+
+2. **Esegui gli Script**:
+   - Identifica le regioni dello schermo e le coordinate utilizzando `main.py` e `posizione.py`.
+   - Usa `screenshot.py` per catturare screenshot delle regioni desiderate.
+   - Modifica il `icon_path` e le coordinate in `acquista.py`, `RifornisciVendi.py` e `Riconoscimento.py` per adattarli alla tua configurazione dello schermo.
+   - Esegui `script.py` per automatizzare la serie di azioni per la gestione degli oggetti.
+
+3. **OCR**:
+   - Assicurati che Tesseract sia installato e che il percorso sia correttamente impostato in `NumberRecognition.py`.
+   - Posiziona l'immagine da riconoscere nel percorso specificato ed esegui lo script per estrarre i numeri.
+
+## Esempio di Workflow
+
+1. Usa `posizione.py` per trovare le coordinate degli elementi sullo schermo.
+2. Cattura queste regioni con `screenshot.py`.
+3. Aggiorna il `icon_path` in `acquista.py` e `RifornisciVendi.py` con gli screenshot catturati.
+4. Esegui `Riconoscimento.py` per monitorare e interagire continuamente con gli elementi dello schermo.
+5. Usa `script.py` per automatizzare i compiti ripetitivi che coinvolgono gli elementi riconosciuti.
+6. Utilizza `NumberRecognition.py` per compiti che richiedono l'estrazione di testo dalle immagini.
+
+## Ringraziamenti
+
+- Il progetto sfrutta varie librerie Python per ottenere l'automazione dello schermo e il riconoscimento delle immagini.
+- OpenCV e Tesseract OCR sono strumentali nei compiti di elaborazione e riconoscimento delle immagini.
+
